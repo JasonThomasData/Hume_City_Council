@@ -23,8 +23,7 @@ def extract_elems_from_paragraph(application_list, url)
       record["address"] = "#{elems_to_analyse[index + 1].inner_text.strip}, VIC"
     elsif elem_to_extract.to_s.include? "No decision will be made prior to"
       day, month, year = elems_to_analyse[index + 1].inner_text.strip.split("/")
-      on_notice_to_formatted = "#{year}-#{month}-#{day}"
-      record["on_notice_to"] = on_notice_to_formatted
+      record["on_notice_to"] = "#{year}-#{month}-#{day}"
     elsif elem_to_extract.to_s.include? "Proposal"
       record["description"] = elems_to_analyse[index + 1].inner_text.strip
     end
