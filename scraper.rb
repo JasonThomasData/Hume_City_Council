@@ -56,3 +56,5 @@ applications_all.each_with_index do |application, index|
   data_from_dev_application = extract_elems_from_paragraph(application, url)
   save_dev_application_data(data_from_dev_application)
 end
+
+exit
